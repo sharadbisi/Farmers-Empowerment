@@ -15,10 +15,15 @@ class MyNews extends StatelessWidget {
           shape: BoxShape.rectangle,
           border: Border.all(
             width: 5,
-            color: Colors.amberAccent,
+            color: const Color.fromARGB(255, 64, 255, 105),
           ),
         ),
-        child: Center(child: Text(child)),
+        child: ClipRRect(
+          child: Image.asset(
+            child,
+            fit: BoxFit.cover, // Cover the entire space of the container
+          ),
+        ),
       ),
     );
   }

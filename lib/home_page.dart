@@ -21,7 +21,7 @@ class _HomepageState extends State<Homepage> {
     ProfileScreen(),
   ];
 
-  final List _news = ['news 1', 'news 2', 'news 3', 'news 4'];
+  final List _news = ['images/1.jpeg', 'images/2.jpeg', 'images/1.jpeg', 'images/1.jpeg'];
 
   final List _posts = ['Post 1', 'post 2', 'Post 3'];
 
