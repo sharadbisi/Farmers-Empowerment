@@ -12,7 +12,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int _currindex = 0;
+  var _currindex = 0;
 
     // defining my screens
   final List<Widget> _screens = [
@@ -46,8 +46,8 @@ class _HomepageState extends State<Homepage> {
       body: Column(
         children: [
           //news scroll
-          Container(
-            height: 150,
+          SizedBox(
+            height: 200,
             child: ListView.builder(
               itemCount: _news.length,
               scrollDirection: Axis.horizontal,
@@ -69,15 +69,17 @@ class _HomepageState extends State<Homepage> {
                 );
               },
             ),
-          )
+          ),
+          // _screens.elementAt(_currIndex),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currindex,
         onTap: (value) {
+          setState(() {
           _currindex = value;
-          // return _screens.elementAt(_currIndex),
           print('Tapped on the index number ${_currindex}');
+          });
         },
         items: const [
           BottomNavigationBarItem(
