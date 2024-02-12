@@ -62,12 +62,16 @@ flutter:
   assets:
     - images/farmer.png
     - images/f2.png
-    - images/1.jpeg
-    - images/2.jpeg
-    - images/3.jpeg
-    - images/4.jpeg
-    # - images/a_dot_burr.jpeg
-    # - images/a_dot_ham.jpeg
+    - images/blog.jpg
+    - images/crop.jpg
+    - images/diasease.jpg
+    - images/seeds.jpg
+    - images/tools.jpg
+    - images/weather.jpg
+    # - images/1.jpeg
+    # - images/2.jpeg
+    # - images/3.jpeg
+    # - images/4.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
