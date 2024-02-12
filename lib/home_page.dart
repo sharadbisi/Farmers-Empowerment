@@ -1,8 +1,6 @@
-import 'package:farmer/Scroll_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:farmer/profile.dart';
 import 'package:farmer/weather/weather.dart';
-import 'package:flutter/material.dart';
-import 'my_news.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -13,23 +11,13 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   var _currindex = 0;
-  // defining my screens of botttom nav bar
+  // DEFINE SCREENS FOR BOTOM NAVBAR
   final List<Widget> _screens = [
     Homepage(),
     WeatherScreen(),
     ProfileScreen(),
   ];
 
-  /* //this are for 1st experiment
-   final List _news = [
-    'images/1.jpeg',
-    'images/2.jpeg',
-    'images/1.jpeg',
-    'images/1.jpeg'
-  ];
-  final List _posts = ['Post 1', 'post 2', 'Post 3'];*/
-
-  //this is for 2nd experiment
   var services = [
     'Tools',
     'Seeds',
@@ -40,12 +28,12 @@ class _HomepageState extends State<Homepage> {
   ];
 
   var images = [
-    'tools.jpg',
-    'seeds.jpg',
-    'crop.jpg',
-    'diasease.jpg',
-    'blog.jpg',
-    'weather.jpg',
+    'images/tools.png',
+    'images/seeds.png',
+    'images/crops.png',
+    'images/disease.png',
+    'images/blog.png',
+    'images/weather.png',
   ];
 
   @override
@@ -56,7 +44,7 @@ class _HomepageState extends State<Homepage> {
         title: const Text('Farmer Empowerment'),
         backgroundColor: Colors.green[900],
         actions: [
-          // Padding(padding: EdgeInsets.all(8)),
+          const Padding(padding: EdgeInsets.all(8)),
           IconButton(
             icon: const Icon(Icons.more_vert),
             color: const Color(0xffffffff),
@@ -66,76 +54,47 @@ class _HomepageState extends State<Homepage> {
           ),
         ],
       ),
-
-      ///First Body for 1st Experiment
-      // body: Column(
-      //   children: [
-      //     //news scroll
-      //     SizedBox(
-      //       height: 200,
-      //       child: ListView.builder(
-      //         itemCount: _news.length,
-      //         scrollDirection: Axis.horizontal,
-      //         itemBuilder: (context, index) {
-      //           return MyNews(
-      //             child: _news[index],
-      //           );
-      //         },
-      //       ),
-      //     ),
-
-      //     //for more like:- weather forecasting
-      //     Expanded(
-      //       //this is for for scrollable list view
-      //       child: ListView.builder(
-      //         itemCount: _posts.length,
-      //         itemBuilder: (context, index) {
-      //           return Square(
-      //             child: _posts[index],
-      //           );
-      //         },
-      //       ),
-      //     ),
-      //     // _screens.elementAt(_currIndex),
-      //   ],
-      // ),
-
-      ///Second Body for 2nd Experiment
+      //SERVICES PROVIDED BY APP DESIGN AND HANDLE THEM
       body: GridView.builder(
         itemCount: 6,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: Column(
-              children: <Widget>[
-                const SizedBox(
-                  height: 20,
-                ),
-                Image.asset(
-                  images[index],
-                  height: 30,
-                  width: 30,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Text(
-                    services[index],
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      height: 1.5,
-                    ),
-                    textAlign: TextAlign.center,
+          return InkWell(
+            onTap: () {
+              print('Tapped on ${services[index]}');
+            },
+            child: Card(
+              child: Column(
+                children: <Widget>[
+                  const SizedBox(
+                    height: 24,
                   ),
-                )
-              ],
+                  Image.asset(
+                    images[index],
+                    height: 70,
+                    width: 70,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Text(
+                      services[index],
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        height: 1.5,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  )
+                ],
+              ),
             ),
           );
         },
       ),
-      //BOTTOM NAVIGATION BAR
+      //BOTTOM NAVIGATION BAR DESIGN
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currindex,
         onTap: (value) {
@@ -164,39 +123,39 @@ class _HomepageState extends State<Homepage> {
           ),
         ],
       ),
+      //CHAT-BOT UI DESIGN
       floatingActionButton: FloatingActionButton(
-        // shape: Border.all(color: Color.fromARGB(255, 0, 0, 0),width: 2,strokeAlign: BorderSide.strokeAlignCenter),
         onPressed: () {},
-        backgroundColor: Colors.greenAccent,
-        child: const Icon(Icons.forum, size: 30),
+        backgroundColor: Colors.white60,
+        // child: Image.asset('images/chat-bot.gif'),
+        child: Image.asset('images/bot.png'),
       ),
     );
   }
 
-//start popup menu
+  // 3 DOT POPUP MENU DESIGN
   void _showPopupMenu(BuildContext context) async {
     const RelativeRect position = RelativeRect.fromLTRB(20, 30, 0, 50);
     await showMenu(
       context: context,
-      position:
-          position, // Using RelativeRect.fill for demonstration, adjust as needed
+      position: position,
       items: <PopupMenuEntry>[
         const PopupMenuItem(
-          value: 'Weather Forecasting',
-          child: Text("Weather Forecasting"),
+          value: 'Sign Up',
+          child: Text("Sign Up"),
         ),
         const PopupMenuItem(
-          value: 'Tools',
-          child: Text("Tools"),
+          value: 'Login',
+          child: Text("Login"),
         ),
         const PopupMenuItem(
-          value: 'ChatBot',
-          child: Text("ChatBot"),
+          value: 'Logout',
+          child: Text("Logout"),
         ),
       ],
       elevation: 8.0,
     ).then((value) {
-      // Handle the option selected by the user.
+      // HANDLE THE OPTION SELECTED BY USER
       if (value != null) {
         print("You selected: $value");
       }
