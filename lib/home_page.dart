@@ -8,6 +8,7 @@ import 'main_screens/tools.dart';
 import 'navbar_screens/more.dart';
 import 'navbar_screens/profile.dart';
 import 'navbar_screens/weather/weather.dart';
+import 'package:farmer/chat-bot/chat_bot.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -17,7 +18,6 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-
   //DEFINING MAIN SCREENS
   final List<Widget> _mainscreens = [
     ToolsScreen(),
@@ -85,9 +85,9 @@ class _HomepageState extends State<Homepage> {
               print('Tapped on ${services[index]}');
               setState(() {
                 Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => _mainscreens[index]),
-            );
+                  context,
+                  MaterialPageRoute(builder: (context) => _mainscreens[index]),
+                );
               });
             },
             child: Card(
@@ -126,11 +126,11 @@ class _HomepageState extends State<Homepage> {
           setState(() {
             _currindex = value;
             print('Tapped on the index number ${_currindex}');
-            if(_currindex != 0 ){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => _screens[_currindex]),
-            );
+            if (_currindex != 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => _screens[_currindex]),
+              );
             }
           });
         },
@@ -156,7 +156,14 @@ class _HomepageState extends State<Homepage> {
       ),
       //CHAT-BOT UI DESIGN
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyChatBot()),
+            );
+          });
+        },
         backgroundColor: Colors.white60,
         // child: Image.asset('images/chat-bot.gif'),
         child: Image.asset('images/bot.png'),

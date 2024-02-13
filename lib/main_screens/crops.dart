@@ -5,7 +5,11 @@ class CropsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
+      appBar: AppBar(centerTitle: true,
+      title: Text('Crops'),
+      backgroundColor: Colors.green[300],
+      ),
       body: Center(child: Text('CROPS SCREEN')),
     );
   }
