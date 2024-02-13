@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:farmer/profile.dart';
-import 'package:farmer/weather/weather.dart';
+
+import 'navbar_screens/more.dart';
+import 'navbar_screens/profile.dart';
+import 'navbar_screens/weather/weather.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -15,6 +17,7 @@ class _HomepageState extends State<Homepage> {
   final List<Widget> _screens = [
     Homepage(),
     WeatherScreen(),
+    MoreScreen(),
     ProfileScreen(),
   ];
 
@@ -101,6 +104,12 @@ class _HomepageState extends State<Homepage> {
           setState(() {
             _currindex = value;
             print('Tapped on the index number ${_currindex}');
+            if(_currindex != 0 ){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => _screens[_currindex]),
+            );
+            }
           });
         },
         type: BottomNavigationBarType.fixed,
