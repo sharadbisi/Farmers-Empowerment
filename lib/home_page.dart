@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'main_screens/blogs.dart';
+import 'main_screens/crops.dart';
+import 'main_screens/diseases.dart';
+import 'main_screens/seeds.dart';
+import 'main_screens/tools.dart';
 import 'navbar_screens/more.dart';
 import 'navbar_screens/profile.dart';
 import 'navbar_screens/weather/weather.dart';
@@ -12,6 +17,17 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+
+  //DEFINING MAIN SCREENS
+  final List<Widget> _mainscreens = [
+    ToolsScreen(),
+    SeedsScreen(),
+    CropsScreen(),
+    DiseasesScreen(),
+    BlogsScreen(),
+    WeatherScreen(),
+  ];
+
   var _currindex = 0;
   // DEFINE SCREENS FOR BOTOM NAVBAR
   final List<Widget> _screens = [
@@ -67,6 +83,12 @@ class _HomepageState extends State<Homepage> {
           return InkWell(
             onTap: () {
               print('Tapped on ${services[index]}');
+              setState(() {
+                Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => _mainscreens[index]),
+            );
+              });
             },
             child: Card(
               child: Column(
