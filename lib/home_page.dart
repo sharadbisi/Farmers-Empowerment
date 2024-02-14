@@ -4,6 +4,7 @@ import 'main_screens/blogs.dart';
 import 'main_screens/crops.dart';
 import 'main_screens/diseases.dart';
 import 'main_screens/seeds.dart';
+import 'main_screens/soil.dart';
 import 'main_screens/tools.dart';
 import 'navbar_screens/more.dart';
 import 'navbar_screens/profile.dart';
@@ -25,7 +26,7 @@ class _HomepageState extends State<Homepage> {
     CropsScreen(),
     DiseasesScreen(),
     BlogsScreen(),
-    WeatherScreen(),
+    SoilTestingScreen(),
   ];
 
   var _currindex = 0;
@@ -43,7 +44,7 @@ class _HomepageState extends State<Homepage> {
     'Crops',
     'Plant Diseases',
     'Blogs',
-    'weather Report',
+    'Soil Testing',
   ];
 
   var images = [
@@ -52,7 +53,7 @@ class _HomepageState extends State<Homepage> {
     'images/crops.png',
     'images/disease.png',
     'images/blog.png',
-    'images/weather.png',
+    'images/soil.png',
   ];
 
   @override
