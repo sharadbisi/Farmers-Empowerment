@@ -68,12 +68,19 @@ flutter:
     - images/crops.png
     - images/disease.png
     - images/seeds.png
-    - images/weather.png
     - images/tools.png
     - images/soil.png
     - images/chat-bot.gif 
-    - images/tractor.jpg
-    - images/handplow.jpeg
+    - images/tools/Axe.jpeg
+    - images/tools/Cultivator.jpg
+    - images/tools/Hand_Sickle.jpeg
+    - images/tools/handplow.jpeg
+    - images/tools/Hoe.jpeg
+    - images/tools/Shovel.jpeg
+    - images/tools/Sprayer.jpeg
+    - images/tools/Thresher.jpeg
+    - images/tools/tractor.jpg
+    
     # - images/1.jpeg
     # - images/2.jpeg
     # - images/3.jpeg

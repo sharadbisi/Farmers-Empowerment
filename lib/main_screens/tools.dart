@@ -16,14 +16,63 @@ class _ToolsScreenState extends State<ToolsScreen> {
     Tool(
       name: "Tractor",
       description: "Useful for plowing, tilling, and planting large fields.",
-      imageUrl: "images/tractor.jpg",
-      videoUrl: "https://www.youtube.com/shorts/mZnSH4pY6PQ",
+      imageUrl: "images/tools/tractor.jpg",
+      videoUrl: "https://www.youtube.com/watch?v=SyjJSED0gDw&ab_channel=MarylandFarm%26Harvest",
     ),
     Tool(
       name: "Hand Plow",
       description: "Ideal for small gardens and soft soils.",
-      imageUrl: "images/handplow.jpeg",
-      videoUrl: "https://www.youtube.com/shorts/mZnSH4pY6PQ",
+      imageUrl: "images/tools/handplow.jpeg",
+      videoUrl: "https://www.youtube.com/watch?v=hhO_lvBBMSM&list=PLKANlcNm49aUphNC038ui2bbnRzp6ZvM6&ab_channel=DDKisan",
+    ),
+    Tool(
+      name: "Sprayer",
+      description:
+          "It is used to spray insecticides, pesticides, herbicides, and fertilizers on farms, as the name implies.",
+      imageUrl: "images/tools/Sprayer.jpeg",
+      videoUrl:"https://www.youtube.com/watch?v=2Sl8ZPKgwJA&ab_channel=Toolsvilla-TV",
+    ),
+    Tool(
+      name: "Cultivator",
+      description:
+          " A plough attached to a tractor is called a cultivator. This reduces labour and saves time.",
+      imageUrl: "images/tools/Cultivator.jpg",
+      videoUrl: "https://www.youtube.com/watch?v=hhO_lvBBMSM&list=PLKANlcNm49aUphNC038ui2bbnRzp6ZvM6&ab_channel=DDKisan",
+    ),
+    Tool(
+      name: "Hand Sickle",
+      description:
+          "A hand sickle is a curved blade with a wooden handle that is used to cut grass, weeds, and hay.",
+      imageUrl: "images/tools/Hand_Sickle.jpeg",
+      videoUrl: "https://www.youtube.com/watch?v=hhO_lvBBMSM&list=PLKANlcNm49aUphNC038ui2bbnRzp6ZvM6&ab_channel=DDKisan",
+    ),
+    Tool(
+      name: "Hoe",
+      description:
+          " A hoe is an ancient and versatile agricultural hand tool used to shape the soil, control weeds, clear soil, and harvest root crops.",
+      imageUrl: "images/tools/Hoe.jpeg",
+      videoUrl: "https://www.youtube.com/watch?v=hhO_lvBBMSM&list=PLKANlcNm49aUphNC038ui2bbnRzp6ZvM6&ab_channel=DDKisan",
+    ),
+    Tool(
+      name: "Shovel",
+      description:
+          " It is one of the most commonly used agricultural tools among Indian farmers.",
+      imageUrl: "images/tools/Shovel.jpeg",
+      videoUrl: "https://www.youtube.com/watch?v=hhO_lvBBMSM&list=PLKANlcNm49aUphNC038ui2bbnRzp6ZvM6&ab_channel=DDKisan",
+    ),
+    Tool(
+      name: "Axe",
+      description:
+          "For all kinds of primary and advanced purposes, the axe is used and employed for agricultural operations.",
+      imageUrl: "images/tools/Axe.jpeg",
+      videoUrl: "https://www.youtube.com/watch?v=hhO_lvBBMSM&list=PLKANlcNm49aUphNC038ui2bbnRzp6ZvM6&ab_channel=DDKisan",
+    ),
+    Tool(
+      name: "Thresher",
+      description:
+          "A thresher is a machine used to remove seeds from their surrounding chaff, husks, and straws.",
+      imageUrl: "images/tools/Thresher.jpeg",
+      videoUrl: "https://www.youtube.com/watch?v=hhO_lvBBMSM&list=PLKANlcNm49aUphNC038ui2bbnRzp6ZvM6&ab_channel=DDKisan",
     ),
   ];
 
@@ -32,7 +81,10 @@ class _ToolsScreenState extends State<ToolsScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Tools'),
+        title: const Text(
+          'Tools',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.blueGrey[300],
       ),
       body: ListView.builder(
@@ -45,7 +97,10 @@ class _ToolsScreenState extends State<ToolsScreen> {
               width: 50,
               height: 50,
             ),
-            title: Text(tool.name),
+            title: Text(
+              tool.name,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
             subtitle: Text(tool.description),
             onTap: () {
               Navigator.push(
@@ -100,6 +155,4 @@ class ToolDetailPage extends StatelessWidget {
       throw Exception('Could not launch $url');
     }
   }
-
-
 }
