@@ -76,7 +76,9 @@ class _HomepageState extends State<Homepage> {
       ),
       //SERVICES PROVIDED BY APP DESIGN AND HANDLE THEM
       body: Padding(
-        padding: const EdgeInsets.only(top:12), //I added this later to give padding on top. by wrip with padding
+        padding: const EdgeInsets.only(
+            top:
+                12), //I added this later to give padding on top. by wrip with padding
         child: GridView.builder(
           itemCount: 6,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -85,11 +87,12 @@ class _HomepageState extends State<Homepage> {
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
               onTap: () {
-                print('Tapped on ${services[index]}');
+                // print('Tapped on ${services[index]}');
                 setState(() {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => _mainscreens[index]),
+                    MaterialPageRoute(
+                        builder: (context) => _mainscreens[index]),
                   );
                 });
               },
@@ -129,7 +132,7 @@ class _HomepageState extends State<Homepage> {
         onTap: (value) {
           setState(() {
             _currindex = value;
-            print('Tapped on the index number ${_currindex}');
+            // print('Tapped on the index number ${_currindex}');
             if (_currindex != 0) {
               Navigator.push(
                 context,
