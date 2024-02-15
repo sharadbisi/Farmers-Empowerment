@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main_screens/animals.dart';
 import 'main_screens/blogs.dart';
-import 'main_screens/crops.dart';
 import 'main_screens/diseases.dart';
 import 'main_screens/seeds.dart';
 import 'main_screens/soil.dart';
@@ -23,10 +23,10 @@ class _HomepageState extends State<Homepage> {
   final List<Widget> _mainscreens = [
     ToolsScreen(),
     SeedsScreen(),
-    CropsScreen(),
-    DiseasesScreen(),
-    BlogsScreen(),
     SoilTestingScreen(),
+    DiseasesScreen(),
+    AnimalScreen(),
+    BlogsScreen(),
   ];
 
   var _currindex = 0;
@@ -39,21 +39,21 @@ class _HomepageState extends State<Homepage> {
   ];
 
   var services = [
-    'Tools',
-    'Seeds',
-    'Crops',
-    'Plant Diseases',
-    'Blogs',
+    'Farming Tools',
+    'Seeds and Crops',
     'Soil Testing',
+    'Plant Diseases',
+    'Animal Husbandry',
+    'Blogs',
   ];
 
   var images = [
     'images/tools.png',
     'images/seeds.png',
-    'images/crops.png',
-    'images/disease.png',
-    'images/blog.png',
     'images/soil.png',
+    'images/disease.png',
+    'images/animal.png',
+    'images/blog.png',
   ];
 
   @override
@@ -75,50 +75,53 @@ class _HomepageState extends State<Homepage> {
         ],
       ),
       //SERVICES PROVIDED BY APP DESIGN AND HANDLE THEM
-      body: GridView.builder(
-        itemCount: 6,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return InkWell(
-            onTap: () {
-              print('Tapped on ${services[index]}');
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => _mainscreens[index]),
-                );
-              });
-            },
-            child: Card(
-              child: Column(
-                children: <Widget>[
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  Image.asset(
-                    images[index],
-                    height: 70,
-                    width: 70,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Text(
-                      services[index],
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        height: 1.5,
-                      ),
-                      textAlign: TextAlign.center,
+      body: Padding(
+        padding: const EdgeInsets.only(top:12), //I added this later to give padding on top. by wrip with padding
+        child: GridView.builder(
+          itemCount: 6,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return InkWell(
+              onTap: () {
+                print('Tapped on ${services[index]}');
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => _mainscreens[index]),
+                  );
+                });
+              },
+              child: Card(
+                child: Column(
+                  children: <Widget>[
+                    const SizedBox(
+                      height: 14,
                     ),
-                  )
-                ],
+                    Image.asset(
+                      images[index],
+                      height: 70,
+                      width: 70,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        services[index],
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          height: 1.5,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
       //BOTTOM NAVIGATION BAR DESIGN
       bottomNavigationBar: BottomNavigationBar(

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class CropsScreen extends StatelessWidget {
-  const CropsScreen({super.key});
+class AnimalScreen extends StatelessWidget {
+  const AnimalScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(centerTitle: true,
-      title: Text('Crops'),
+      title: Text('Animal Husbandry'),
       backgroundColor: Colors.green[300],
       ),
-      body: Center(child: Text('CROPS SCREEN')),
+      body: Center(child: Text('ANIMAL HUSBANDRY SCREEN')),
     );
   }
 }

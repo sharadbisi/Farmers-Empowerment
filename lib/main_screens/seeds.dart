@@ -7,7 +7,7 @@ class SeedsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(centerTitle: true,
-      title: Text('Seeds'),
+      title: Text('Seeds and Crops'),
       backgroundColor: Colors.orangeAccent[300],
       ),
       body: Center(child: Text('SEEDS SCREEN')),
