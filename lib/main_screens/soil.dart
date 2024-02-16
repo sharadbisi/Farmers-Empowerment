@@ -15,6 +15,8 @@ class SoilTestingScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.network('https://images.pexels.com/photos/169523/pexels-photo-169523.jpeg?auto=compress&cs=tinysrgb&w=600',height: 200,),
+            const Text('It is the farmland analysis for multiple parameters like chemical content, toxicity, pH level, salinity, earth-dwelling biota, etc. Such tests also provide information on chemical contamination, humic or organic content, electric conductivity, cation exchange capacity, and other physical and chemical properties.',style: TextStyle(fontFamily: AutofillHints.addressCity,fontSize: 20,fontWeight: FontWeight.w300),),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -40,7 +42,8 @@ class SoilTestingScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const SoilManagementTips()),
+                    builder: (context) => const SoilManagementTips(),
+                  ),
                 );
               },
               child: const Text('Soil Management Tips'),
@@ -96,7 +99,7 @@ class SoilTestingGuide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Soil Testing Guide'),
+        title: const Text('Soil Testing Guideline'),
       ),
       body: GridView.count(
         crossAxisCount: 2,
@@ -182,7 +185,12 @@ class TestInstructionsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Image.asset(imagePath),
+            Image.asset(
+              imagePath,
+              height: 300,
+              width: 300,
+              alignment: Alignment.center,
+            ),
           ],
         ),
       ),
