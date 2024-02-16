@@ -15,8 +15,20 @@ class SoilTestingScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.network('https://images.pexels.com/photos/169523/pexels-photo-169523.jpeg?auto=compress&cs=tinysrgb&w=600',height: 200,),
-            const Text('It is the farmland analysis for multiple parameters like chemical content, toxicity, pH level, salinity, earth-dwelling biota, etc. Such tests also provide information on chemical contamination, humic or organic content, electric conductivity, cation exchange capacity, and other physical and chemical properties.',style: TextStyle(fontFamily: AutofillHints.addressCity,fontSize: 20,fontWeight: FontWeight.w300),),
+            Image.asset(
+              'images/soil_test/soiltesting.jpg',
+              height: 200,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'It is the farmland analysis for multiple parameters like chemical content, toxicity, pH level, salinity, earth-dwelling biota, etc. Such tests also provide information on chemical contamination, humic or organic content, electric conductivity, cation exchange capacity, and other physical and chemical properties.',
+                style: TextStyle(
+                    fontFamily: AutofillHints.addressCity,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -118,7 +130,7 @@ class SoilTestingGuide extends StatelessWidget {
               );
             },
             child: Card(
-              elevation: 5,
+              elevation: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
