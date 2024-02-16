@@ -80,7 +80,12 @@ flutter:
     - images/tools/Sprayer.jpeg
     - images/tools/Thresher.jpeg
     - images/tools/tractor.jpg
-    
+    - images/soil_test/ph.png
+    - images/soil_test/moisture.png
+    - images/soil_test/nitrogen.png
+    - images/soil_test/phosphorus.png
+    - images/soil_test/potassium.png
+    - images/soil_test/organic.png
     # - images/1.jpeg
     # - images/2.jpeg
     # - images/3.jpeg
