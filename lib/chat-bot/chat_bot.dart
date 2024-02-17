@@ -91,26 +91,33 @@ class _MyChatBotState extends State<MyChatBot> {
               child: TextField(
                 controller: _controller,
                 onSubmitted: _handleSubmitted,
-                decoration: const InputDecoration.collapsed(
-                  hintText: "Send a message",hintStyle: TextStyle(fontSize: 18),
+                decoration: InputDecoration(
+                  hintText: "Send a message",
+                  hintStyle: const TextStyle(fontSize: 18),
                   border: OutlineInputBorder(
-                    // gapPadding: 40,
-                    // borderSide: BorderSide(),
-                    // borderRadius: BorderRadius.all(Radius.zero)
+                    borderRadius: BorderRadius.circular(20.0),
+                    borderSide: const BorderSide(color: Colors.grey),
+                  ),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.send, color: Colors.green),
+                    onPressed: () {
+                      _handleSubmitted(_controller.text);
+                    },
                   ),
                 ),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 4.0),
-              child: IconButton(
-                icon: const Icon(
-                  Icons.send,
-                  color: Colors.green,
-                ),
-                onPressed: () => _handleSubmitted(_controller.text),
-              ),
-            ),
+            // Container(
+            //   margin: const EdgeInsets.symmetric(horizontal: 4.0),
+            //   child: IconButton(
+            //     icon: const Icon(
+            //       Icons.send,
+            //       color: Colors.green,
+            //     ),
+            //     iconSize: 35.0,
+            //     onPressed: () => _handleSubmitted(_controller.text),
+            //   ),
+            // ),
           ],
         ),
       ),
