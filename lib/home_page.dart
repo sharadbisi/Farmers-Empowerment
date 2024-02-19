@@ -43,7 +43,7 @@ class _HomepageState extends State<Homepage> {
     'Seeds and Crops',
     'Soil Testing',
     'Plant Diseases',
-    'Animal Husbandry',
+    'पशुपालन',
     'Blogs',
   ];
 

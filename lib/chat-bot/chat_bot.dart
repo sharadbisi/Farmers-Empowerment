@@ -18,11 +18,11 @@ class _MyChatBotState extends State<MyChatBot> {
     // simple chat logic based on keywords
     if (text.contains('weather')) {
       response = 'The weather is looking sunny for the next few days.';
-    } else if (text.contains('pest')) {
-      response = 'For pests, neem oil can be an effective natural remedy.';
-    } else if (text.contains('crop price')) {
-      response = 'Crop prices vary, please specify which crop.';
-    } else if (text.contains('rice')) {
+    } else if (text.contains('wheat price')) {
+      response = '₹2138/Quintal';
+    } else if (text.contains('crop')) {
+      response = 'suggested crops - Watermelon,Cucumber';
+    } else if (text.contains('rice price')) {
       response =
           'The current price for rice is approximately Rs. 2500 per quintal.';
     } else if (text.contains('sow')) {
@@ -60,11 +60,16 @@ class _MyChatBotState extends State<MyChatBot> {
               reverse: true, //isse jo msg baad me aayega wo niche aayega
               itemBuilder: (_, int index) => ListTile(
                 title: Container(
-                  padding: const EdgeInsets.only(left: 10, right: 2),
-                  color: Colors.green[100],
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8), 
+                  decoration: BoxDecoration(
+                    color: Colors.green[100], 
+                    borderRadius: BorderRadius.circular(4), 
+                  ),
                   alignment: Alignment.centerLeft,
-                  height: 40,
-                  child: Text(messages[index]),
+                  child: Text(
+                    messages[index],
+                    style: const TextStyle(color: Colors.black),
+                  ),
                 ),
               ),
               itemCount: messages.length,

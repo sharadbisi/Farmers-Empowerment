@@ -87,6 +87,8 @@ flutter:
     - images/soil_test/potassium.png
     - images/soil_test/organic.png
     - images/soil_test/soiltesting.jpg
+    - images/animals/cow.jpg
+    - images/animals/hen.jpg
     # - images/1.jpeg
     # - images/2.jpeg
     # - images/3.jpeg
