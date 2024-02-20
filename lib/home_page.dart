@@ -39,12 +39,12 @@ class _HomepageState extends State<Homepage> {
   ];
 
   var services = [
-    'Farming Tools',
-    'Seeds and Crops',
-    'Soil Testing',
-    'Plant Diseases',
+    'कृषि उपकरण',
+    'बीज और फसलें',
+    'मिट्टी परीक्षण',
+    'पौधों के रोग',
     'पशुपालन',
-    'Blogs',
+    'ब्लॉग',
   ];
 
   var images = [
@@ -60,8 +60,8 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 22),
-        title: const Text('Farmer Empowerment'),
+        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 30,fontWeight: FontWeight.bold),
+        title: const Text('किसान मित्र'),
         backgroundColor: Colors.green[900],
         actions: [
           const Padding(padding: EdgeInsets.all(8)),
