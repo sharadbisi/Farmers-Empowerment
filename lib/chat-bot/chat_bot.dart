@@ -45,7 +45,7 @@ class _MyChatBotState extends State<MyChatBot> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Kishan Mitra',
+          'किसान मित्र',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -60,10 +60,11 @@ class _MyChatBotState extends State<MyChatBot> {
               reverse: true, //isse jo msg baad me aayega wo niche aayega
               itemBuilder: (_, int index) => ListTile(
                 title: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8), 
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   decoration: BoxDecoration(
-                    color: Colors.green[100], 
-                    borderRadius: BorderRadius.circular(4), 
+                    color: Colors.green[100],
+                    borderRadius: BorderRadius.circular(4),
                   ),
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -112,17 +113,6 @@ class _MyChatBotState extends State<MyChatBot> {
                 ),
               ),
             ),
-            // Container(
-            //   margin: const EdgeInsets.symmetric(horizontal: 4.0),
-            //   child: IconButton(
-            //     icon: const Icon(
-            //       Icons.send,
-            //       color: Colors.green,
-            //     ),
-            //     iconSize: 35.0,
-            //     onPressed: () => _handleSubmitted(_controller.text),
-            //   ),
-            // ),
           ],
         ),
       ),

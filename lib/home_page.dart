@@ -60,7 +60,8 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 30,fontWeight: FontWeight.bold),
+        titleTextStyle: const TextStyle(
+            color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
         title: const Text('किसान मित्र'),
         backgroundColor: Colors.green[900],
         actions: [
@@ -77,8 +78,8 @@ class _HomepageState extends State<Homepage> {
       //SERVICES PROVIDED BY APP DESIGN AND HANDLE THEM
       body: Padding(
         padding: const EdgeInsets.only(
-            top:
-                12), //I added this later to give padding on top. by wrip with padding
+          top: 12,
+        ), //I added this later to give padding on top. by wrap with padding
         child: GridView.builder(
           itemCount: 6,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -167,12 +168,12 @@ class _HomepageState extends State<Homepage> {
           setState(() {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MyChatBot()),
+              MaterialPageRoute(builder: (context) => const MyChatBot()),
             );
           });
         },
-        backgroundColor: Colors.white60,
-        // child: Image.asset('images/chat-bot.gif'),
+        // backgroundColor: Colors.white60,
+        // child: Image.asset('images/chat-bot.png'),
         child: Image.asset('images/bot.png'),
       ),
     );
