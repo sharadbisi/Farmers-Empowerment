@@ -7,7 +7,7 @@ import 'weather_model.dart';
 class WeatherService {
   // It's better to name constants with a full uppercase to follow Dart conventions
   static const BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
-  final String apiKey;
+  final String apiKey;  
 
   WeatherService(this.apiKey);
 
