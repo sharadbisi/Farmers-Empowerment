@@ -6,7 +6,7 @@ import 'main_screens/diseases.dart';
 import 'main_screens/seeds.dart';
 import 'main_screens/soil.dart';
 import 'main_screens/tools.dart';
-import 'navbar_screens/more.dart';
+import 'navbar_screens/more.dart';//news screen
 import 'navbar_screens/profile.dart';
 import 'navbar_screens/weather/weather.dart';
 import 'package:farmer/chat-bot/chat_bot.dart';
@@ -34,7 +34,7 @@ class _HomepageState extends State<Homepage> {
   final List<Widget> _screens = [
     Homepage(),
     WeatherScreen(),
-    MoreScreen(),
+    NewsScreen(),
     ProfileScreen(),
   ];
 
