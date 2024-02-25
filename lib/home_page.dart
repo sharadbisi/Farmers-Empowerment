@@ -146,19 +146,19 @@ class _HomepageState extends State<Homepage> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'होम',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.wb_cloudy_outlined),
-            label: 'Weather',
+            label: 'मौसम',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.more),
-            label: 'More',
+            icon: Icon(Icons.newspaper),
+            label: 'न्यूज़',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'प्रोफाइल',
           ),
         ],
       ),
@@ -187,16 +187,12 @@ class _HomepageState extends State<Homepage> {
       position: position,
       items: <PopupMenuEntry>[
         const PopupMenuItem(
-          value: 'Sign Up',
-          child: Text("Sign Up"),
-        ),
-        const PopupMenuItem(
           value: 'Login',
-          child: Text("Login"),
+          child: Text("लॉगिन"),
         ),
         const PopupMenuItem(
           value: 'Logout',
-          child: Text("Logout"),
+          child: Text("लॉगआउट"),
         ),
       ],
       elevation: 8.0,
