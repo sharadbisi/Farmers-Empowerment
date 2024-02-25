@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'authentication/login.dart';
+import 'authentication/logout.dart';
 import 'main_screens/animals.dart';
 import 'main_screens/blogs.dart';
 import 'main_screens/diseases.dart';
@@ -189,6 +191,9 @@ class _HomepageState extends State<Homepage> {
         const PopupMenuItem(
           value: 'Login',
           child: Text("लॉगिन"),
+          // onTap: () {
+          //   MaterialPageRoute(builder: builder)
+          // },
         ),
         const PopupMenuItem(
           value: 'Logout',
@@ -197,9 +202,20 @@ class _HomepageState extends State<Homepage> {
       ],
       elevation: 8.0,
     ).then((value) {
-      // HANDLE THE OPTION SELECTED BY USER
+      // HANDLE THE OPTION SELECTED BY FARMER
       if (value != null) {
-        print("You selected: $value");
+        if (value == 'Login') {
+          Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginScreen()),
+        );
+        }
+        else if(value == 'Logout'){
+          Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LogoutScreen()),
+        );
+        }
       }
     });
   }
