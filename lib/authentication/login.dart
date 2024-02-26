@@ -39,7 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 // controller: _usernameController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  icon: Icon(Icons.person),
+                  icon: Icon(
+                    Icons.person_outline,
+                    // color: Colors.orange,
+                  ),
                   labelText: 'Username',
                 ),
               ),
@@ -51,7 +54,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  icon: Icon(Icons.lock),
+                  icon: Icon(
+                    Icons.lock,
+                    // color: Colors.grey,
+                  ),
                   labelText: 'Password',
                 ),
               ),
@@ -97,10 +103,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
 
-            Image.asset('images/login_bg.jpg',
-                height: 205,width: 400,
-                fit: BoxFit.cover,
-                ),
+            Image.asset(
+              'images/login_bg.jpg',
+              height: 205,
+              width: 400,
+              fit: BoxFit.cover,
+            ),
           ],
         ),
       ),
