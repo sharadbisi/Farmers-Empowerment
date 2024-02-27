@@ -46,33 +46,36 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Weather Report'),
+        // centerTitle: true,
+        title: const Text('मौसम'),
         shadowColor: Colors.white,
-        backgroundColor: Colors.orange[300],
+        backgroundColor: Colors.orange[100],
       ),
       // backgroundColor: Colors.lightGreen,
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextField(
-            // controller: _searchController,
-            decoration: InputDecoration(
-              hintText: 'Enter City Name',
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(
-                  color: Colors.grey.withOpacity(0.5),
-                  width: 1.0,
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              // controller: _searchController,
+              decoration: InputDecoration(
+                hintText: 'Enter City Name',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1.0,
+                  ),
                 ),
-              ),
-              filled: true,
-              fillColor: Colors.grey.withOpacity(0.1),
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
-              hintStyle: TextStyle(
-                color: Colors.grey.withOpacity(0.7),
-                fontStyle: FontStyle.italic,
+                filled: true,
+                fillColor: Colors.grey.withOpacity(0.1),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                hintStyle: TextStyle(
+                  color: Colors.grey.withOpacity(0.7),
+                  fontStyle: FontStyle.italic,
+                ),
               ),
             ),
           ),
@@ -83,7 +86,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
             children: [
               //city name
               Text(
-                _weather?.cityName ?? "loding city....",
+                _weather?.cityName ?? "जानकारी ली जा रही है....",
                 style:
                     const TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
               ),
