@@ -40,7 +40,6 @@ dependencies:
   http: ^1.2.0
   geolocator: ^11.0.0
   geocoding: ^2.2.0
-  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -96,10 +95,13 @@ flutter:
     - images/animals/bee.jpg
     - images/animals/fish.jpeg
     - images/login_bg.jpg
-    # - images/1.jpeg
-    # - images/2.jpeg
-    # - images/3.jpeg
-    # - images/4.jpeg
+    - images/weather/cloudy.png
+    - images/weather/rainy-day.png
+    - images/weather/sun.png
+    - images/weather/thunder.png
+    - images/weather/precipitation.png
+    - images/weather/humidity.png
+    - images/weather/wind.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

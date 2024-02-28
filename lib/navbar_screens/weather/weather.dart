@@ -33,6 +33,32 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   // weather animations
+  String getWeatherCondition(String? mainCondition) {
+    if (mainCondition == null) return 'images/weather/sun.png';
+    switch (mainCondition.toLowerCase()) {
+      case 'clouds':
+      case 'mist':
+      case 'smoke':
+      case 'haze':
+      case 'dust':
+      case 'fog':
+        return 'images/weather/cloudy.png';
+
+      case 'rain':
+      case 'drizzle':
+      case 'shower rain':
+        return 'images/weather/rainy-day.png';
+
+      case 'thunderstorm':
+        return 'images/weather/thunder.png';
+
+      case 'clear':
+        return 'images/weather/sun.png';
+
+      default:
+        return 'images/weather/sun.png';
+    }
+  }
 
   //initial state
   @override
@@ -77,9 +103,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 200,
-          ),
           Column(
             children: [
               //city name
@@ -88,78 +111,280 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 style:
                     const TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
               ),
-              //tempreture
+              //image
+              Image.asset(
+                getWeatherCondition(_weather?.mainCondition),
+                height: 100,
+              ),
+              const SizedBox(height: 20),
+              //tempreture and condition
               Text(
-                '${_weather?.temp.round()}°C',
+                '${_weather?.temp.round()}°C ${_weather?.mainCondition ?? ""}',
                 style: const TextStyle(fontSize: 20),
-              )
+              ),
+              const SizedBox(height: 12),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  height: 120,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8, top: 18),
+                        child: Column(
+                          children: [
+                            Image.asset('images/weather/precipitation.png',
+                                height: 40),
+                            const Text('30',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            const Text('Precipitation')
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 18),
+                        child: Column(
+                          children: [
+                            Image.asset('images/weather/humidity.png',
+                                height: 40),
+                            const Text('30',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            const Text('Humidity')
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8, top: 18),
+                        child: Column(
+                          children: [
+                            Image.asset('images/weather/wind.png', height: 40),
+                            const Text('10 km/h',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            const Text('Wind Speed')
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                '7 Days Wather Forecasting',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),textAlign: TextAlign.left,
+              ),
+              const SizedBox(width: 10),
+
+              ///ADDING 7 DAYS FORECASTING
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // my 1 container
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Container(
+                        height: 120,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8, top: 18),
+                              child: Column(
+                                children: [
+                                  const Text('10 AM',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  Image.asset('images/weather/cloudy.png',
+                                      height: 40),
+                                  const Text('30°C')
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    //2nd container
+                    const SizedBox(width: 10),
+                    Container(
+                      height: 120,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, top: 18),
+                            child: Column(
+                              children: [
+                                const Text('12 AM',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Image.asset('images/weather/cloudy.png',
+                                    height: 40),
+                                const Text('32°C')
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //3rd
+                    const SizedBox(width: 10),
+                    Container(
+                      height: 120,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, top: 18),
+                            child: Column(
+                              children: [
+                                const Text('2 AM',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Image.asset('images/weather/cloudy.png',
+                                    height: 40),
+                                const Text('33°C')
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //4th
+                    const SizedBox(width: 10),
+                    Container(
+                      height: 120,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, top: 18),
+                            child: Column(
+                              children: [
+                                const Text('12 AM',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Image.asset('images/weather/cloudy.png',
+                                    height: 40),
+                                const Text('32°C')
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //5th
+                    const SizedBox(width: 10),
+                    Container(
+                      height: 120,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, top: 18),
+                            child: Column(
+                              children: [
+                                const Text('12 AM',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Image.asset('images/weather/cloudy.png',
+                                    height: 40),
+                                const Text('32°C')
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //6th
+                    const SizedBox(width: 10),
+                    Container(
+                      height: 120,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, top: 18),
+                            child: Column(
+                              children: [
+                                const Text('12 AM',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Image.asset('images/weather/cloudy.png',
+                                    height: 40),
+                                const Text('32°C')
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //7th
+                    const SizedBox(width: 10),
+                    Container(
+                      height: 120,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, top: 18),
+                            child: Column(
+                              children: [
+                                const Text('12 AM',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Image.asset('images/weather/cloudy.png',
+                                    height: 40),
+                                const Text('32°C')
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          //adding next 15 days data
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Container(
-                    height: 250,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    border: Border.all(
-                      color: Color.fromARGB(255, 82, 112, 74),
-                      width: 5,
-                    ),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Center(
-                    child: Text('day 1'),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Container(
-                  height: 250,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    border: Border.all(
-                      color: Color.fromARGB(255, 82, 112, 74),
-                      width: 5,
-                    ),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Center(
-                    child: Text('day 2'),
-                  ),
-                ),
-              ),
-              // Padding(
-              //   padding: const EdgeInsets.only(left: 8),
-              //   child: Container(
-              //     height: 250,
-              //     width: 150,
-              //     decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.all(Radius.circular(12)),
-              //       border: Border.all(
-              //         color: Color.fromARGB(255, 82, 112, 74),
-              //         width: 5,
-              //       ),
-              //       shape: BoxShape.rectangle,
-              //     ),
-              //     child: Center(
-              //       child: Text('day 2'),
-              //     ),
-              //   ),
-              // ),
-            ],
-          )
-          //15 days design over
         ],
       ),
     );
   }
 }
-
-
-
