@@ -41,4 +41,21 @@ class WeatherService {
 
     return city ?? "";
   }
+
+Future<List<Weather>> getForecast(String cityName) async {
+  final response = await http.get(Uri.parse('$BASE_URL?q=$cityName&appid=$apiKey&units=metric'));
+
+  if (response.statusCode == 200) {
+    final jsonData = jsonDecode(response.body);
+    print('Forecast API Response: $jsonData'); // Log the response for debugging
+
+    // Parse the response JSON and extract forecast data...
+    // Your existing code to parse the response and create a list of Weather objects
+  } else {
+    print('Failed to fetch forecast data. Status code: ${response.statusCode}');
+    throw Exception('Failed to load forecast data');
+  }
+  throw Error();
+}
+
 }

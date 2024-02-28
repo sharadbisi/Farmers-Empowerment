@@ -2,7 +2,6 @@ import 'package:farmer/navbar_screens/weather/weather_model.dart';
 import 'package:farmer/navbar_screens/weather/weather_services.dart';
 import 'package:flutter/material.dart';
 
-
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
 
@@ -51,7 +50,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
         shadowColor: Colors.white,
         backgroundColor: Colors.orange[100],
       ),
-      // backgroundColor: Colors.lightGreen,
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -70,8 +68,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 ),
                 filled: true,
                 fillColor: Colors.grey.withOpacity(0.1),
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 12.0, horizontal: 16.0),
                 hintStyle: TextStyle(
                   color: Colors.grey.withOpacity(0.7),
                   fontStyle: FontStyle.italic,
@@ -97,8 +95,71 @@ class _WeatherScreenState extends State<WeatherScreen> {
               )
             ],
           ),
+          //adding next 15 days data
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Container(
+                    height: 250,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    border: Border.all(
+                      color: Color.fromARGB(255, 82, 112, 74),
+                      width: 5,
+                    ),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Center(
+                    child: Text('day 1'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Container(
+                  height: 250,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    border: Border.all(
+                      color: Color.fromARGB(255, 82, 112, 74),
+                      width: 5,
+                    ),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Center(
+                    child: Text('day 2'),
+                  ),
+                ),
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: 8),
+              //   child: Container(
+              //     height: 250,
+              //     width: 150,
+              //     decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.all(Radius.circular(12)),
+              //       border: Border.all(
+              //         color: Color.fromARGB(255, 82, 112, 74),
+              //         width: 5,
+              //       ),
+              //       shape: BoxShape.rectangle,
+              //     ),
+              //     child: Center(
+              //       child: Text('day 2'),
+              //     ),
+              //   ),
+              // ),
+            ],
+          )
+          //15 days design over
         ],
       ),
     );
   }
 }
+
+
+

@@ -19,97 +19,98 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(fontSize: 28),
         ),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const Text('Please Login To Continue'),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'LOGIN',
-              style: TextStyle(fontSize: 23),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            const Padding(
-              padding: EdgeInsets.all(16),
-              child: TextField(
-                // controller: _usernameController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  icon: Icon(
-                    Icons.person_outline,
-                    // color: Colors.orange,
-                  ),
-                  labelText: 'Username',
-                ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              const Text('Please Login To Continue'),
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(16),
-              child: TextField(
-                // controller: _passwordController,
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  icon: Icon(
-                    Icons.lock,
-                    // color: Colors.grey,
-                  ),
-                  labelText: 'Password',
-                ),
+              const Text(
+                'LOGIN',
+                style: TextStyle(fontSize: 23),
               ),
-            ),
-            ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.yellow),
-                  shape: MaterialStatePropertyAll(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
+              const SizedBox(
+                height: 40,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: TextField(
+                  // controller: _usernameController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    icon: Icon(
+                      Icons.person_outline,
+                      // color: Colors.orange,
                     ),
-                  )),
-              onPressed: () {},
-              child: const Text(
-                'SUBMIT',
-                // style: TextStyle(color: Colors.white),
+                    labelText: 'Username',
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(height: 30),
-            const Padding(
-              padding: EdgeInsets.only(left: 70),
-              child: Row(
-                children: [
-                  Text('Forgot Your Password?'),
-                  Text(
-                    ' Reset Here',
-                    style: TextStyle(fontWeight: FontWeight.w500),
-                  )
-                ],
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: TextField(
+                  // controller: _passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    icon: Icon(
+                      Icons.lock,
+                      // color: Colors.grey,
+                    ),
+                    labelText: 'Password',
+                  ),
+                ),
               ),
-            ),
-            // const SizedBox(height: 5),
-            const Padding(
-              padding: EdgeInsets.only(left: 75),
-              child: Row(
-                children: [
-                  Text("Don't Have An Account?"),
-                  Text(
-                    ' Register',
-                    style: TextStyle(fontWeight: FontWeight.w500),
-                  )
-                ],
+              ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.yellow),
+                    shape: MaterialStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0.0),
+                      ),
+                    )),
+                onPressed: () {},
+                child: const Text(
+                  'SUBMIT',
+                  // style: TextStyle(color: Colors.white),
+                ),
               ),
-            ),
-
-            Image.asset(
-              'images/login_bg.jpg',
-              height: 205,
-              width: 400,
-              fit: BoxFit.cover,
-            ),
-          ],
+              const SizedBox(height: 30),
+              const Padding(
+                padding: EdgeInsets.only(left: 70),
+                child: Row(
+                  children: [
+                    Text('Forgot Your Password?'),
+                    Text(
+                      ' Reset Here',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ),
+              // const SizedBox(height: 5),
+              const Padding(
+                padding: EdgeInsets.only(left: 75),
+                child: Row(
+                  children: [
+                    Text("Don't Have An Account?"),
+                    Text(
+                      ' Register',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ),
+              Image.asset(
+                'images/login_bg.jpg',
+                height: 205,
+                width: 400,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
         ),
       ),
     );
