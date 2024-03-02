@@ -10,6 +10,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  final TextEditingController _searchController = TextEditingController();
   //api key
   final _weatherService = WeatherService('0837bb789f0ea1efe2e8b12ecbb992d0');
   Weather? _weather;
@@ -17,6 +18,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   //fetch weather
   _fetchweather() async {
     //get the city
+    // String cityName = await _weatherService.getCurrentCity();
     String cityName = await _weatherService.getCurrentCity();
 
     //get weather for that city
@@ -82,7 +84,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
-              // controller: _searchController,
+              onTap: () {},
+              controller: _searchController,
               decoration: InputDecoration(
                 hintText: 'Enter City Name',
                 border: OutlineInputBorder(
@@ -145,15 +148,19 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             if (_weather?.rain != null)
                               Text(
                                 'Rain: ${_weather!.rain}mm',
-                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
                               ),
                             if (_weather?.snow != null)
                               Text(
                                 'Snow: ${_weather!.snow}mm',
-                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
                               ),
                             if ((_weather?.rain) == null)
-                            const Text('NA',style: TextStyle(fontWeight: FontWeight.bold)),
+                              const Text('NA',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                             const Text('Precipitation')
                           ],
                         ),
@@ -178,10 +185,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         child: Column(
                           children: [
                             Image.asset('images/weather/wind.png', height: 40),
-                            // Text('${_weather?.windSpeed ?? ''} m/s'),
-                            // Text('${_weather?.windSpeed ?? ''}km/h',style:const TextStyle (fontWeight: FontWeight.bold)),
-                            const Text('10 km/h',style: TextStyle(fontWeight: FontWeight.bold)),
-                             const Text('Wind Speed')
+                            Text(
+                              '${_weather?.windSpeed?.toStringAsFixed(2) ?? 'N/A'} km/h',
+                              style: const TextStyle(fontWeight: FontWeight.bold)
+                            ),
+                            // const Text('10 km/h',
+                            //     style: TextStyle(fontWeight: FontWeight.bold)),
+                            const Text('Wind Speed')
                           ],
                         ),
                       ),

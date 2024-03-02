@@ -8,7 +8,7 @@ class WeatherService {
   // It's better to name constants with a full uppercase to follow Dart conventions
   static const BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
   final String apiKey;  
-
+ 
   WeatherService(this.apiKey);
 
   Future<Weather> getWeather(String cityName) async {
@@ -20,6 +20,8 @@ class WeatherService {
       throw Exception('Failed to load weather data');
     }
   }
+
+
 
   Future<String> getCurrentCity()  async{
     //get permission from user
