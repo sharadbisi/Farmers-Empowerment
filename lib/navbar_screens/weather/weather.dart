@@ -107,7 +107,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
             children: [
               //city name
               Text(
-                _weather?.cityName ?? "जानकारी ली जा रही है....",
+                _weather?.cityName ?? "Loding....",
                 style:
                     const TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
               ),
@@ -141,8 +141,19 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           children: [
                             Image.asset('images/weather/precipitation.png',
                                 height: 40),
-                            const Text('30',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            // const Text('30',style: TextStyle(fontWeight: FontWeight.bold)),
+                            if (_weather?.rain != null)
+                              Text(
+                                'Rain: ${_weather!.rain}mm',
+                                style: const TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            if (_weather?.snow != null)
+                              Text(
+                                'Snow: ${_weather!.snow}mm',
+                                style: const TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            if ((_weather?.rain) == null)
+                            const Text('NA',style: TextStyle(fontWeight: FontWeight.bold)),
                             const Text('Precipitation')
                           ],
                         ),
@@ -153,8 +164,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           children: [
                             Image.asset('images/weather/humidity.png',
                                 height: 40),
-                            const Text('30',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text(
+                              '${_weather?.humidity ?? ''}%',
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             const Text('Humidity')
                           ],
                         ),
@@ -164,9 +178,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         child: Column(
                           children: [
                             Image.asset('images/weather/wind.png', height: 40),
-                            const Text('10 km/h',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            const Text('Wind Speed')
+                            // Text('${_weather?.windSpeed ?? ''} m/s'),
+                            // Text('${_weather?.windSpeed ?? ''}km/h',style:const TextStyle (fontWeight: FontWeight.bold)),
+                            const Text('10 km/h',style: TextStyle(fontWeight: FontWeight.bold)),
+                             const Text('Wind Speed')
                           ],
                         ),
                       ),
@@ -177,7 +192,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
               const SizedBox(height: 20),
               const Text(
                 '7 Days Wather Forecasting',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
               ),
               const SizedBox(width: 10),
 
