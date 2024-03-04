@@ -60,4 +60,15 @@ Future<List<Weather>> getForecast(String cityName) async {
   throw Error();
 }
 
+  // Future<List<Weather>> getForecast(String cityName) async {
+  //   final response = await http.get(Uri.parse('$BASE_URL/forecast?q=$cityName&appid=$apiKey&units=metric'));
+
+  //   if (response.statusCode == 200) {
+  //     final List<dynamic> jsonList = jsonDecode(response.body)['list'];
+  //     return jsonList.map((json) => Weather.fromJson(json)).toList();
+  //   } else {
+  //     throw Exception('Failed to load forecast data');
+  //   }
+  // }
+
 }
