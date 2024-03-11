@@ -251,7 +251,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
               const SizedBox(height: 15),
               const Text(
                 '5 दिनों का मौसम पूर्वानुमान',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.left,
               ),
               const SizedBox(
@@ -273,6 +273,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            const SizedBox(height: 10),
                             Text(
                               DateFormat('MMM d  HH:mm').format(forecast.date),
                               style:
@@ -288,8 +289,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             ),
                              // Display temperature for day wise
                             Text(
-                              '${forecast.temperature}°C',
+                              '${forecast.temperature.round()}°C',
                             ),
+                            const SizedBox(height: 5),
                           ],
                         ),
                       ),
