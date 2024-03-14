@@ -106,7 +106,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
           'मौसम',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        backgroundColor: Colors.orange[100],
+        backgroundColor: Colors.green[100],
       ),
       body: SingleChildScrollView(
         child: Column(

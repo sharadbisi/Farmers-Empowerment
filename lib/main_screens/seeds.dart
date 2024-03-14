@@ -4,146 +4,157 @@ class SeedsScreen extends StatelessWidget {
   SeedsScreen({super.key});
   final List<Crop> cropsData = [
     Crop(
-      name: 'Tomato',
-      description: 'Rich in vitamins, ideal for a variety of climates.',
-      category: 'Vegetables',
+      name: 'टमाटर',
+      description: 'विटामिन से भरपूर, विभिन्न प्रकार की जलवायु के लिए आदर्श।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Wheat',
+      name: 'गेहूँ',
       description:
-          'Staple grain for bread and cereals, requires moderate climates.',
-      category: 'Grains',
+          'रोटी और अनाज के लिए मुख्य अनाज के लिए मध्यम जलवायु की आवश्यकता होती है।',
+      category: 'अनाज',
       imageUrl:
           'https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Rice',
+      name: 'धान',
       description:
-          'A staple food across the world, best in warm, humid climates.',
-      category: 'Grains',
+          'दुनिया भर में एक मुख्य भोजन, गर्म, आर्द्र जलवायु में सर्वोत्तम।',
+      category: 'अनाज',
       imageUrl:
           'https://images.pexels.com/photos/2589457/pexels-photo-2589457.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Potato',
-      description: 'Versatile root vegetable, grows well in cooler climates.',
-      category: 'Vegetables',
+      name: 'आलू',
+      description: 'बहुमुखी जड़ वाली सब्जी, ठंडी जलवायु में अच्छी तरह से बढ़ती है।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Onion',
+      name: 'प्याज',
       description:
-          'Essential flavoring for many dishes, prefers cooler weather.',
-      category: 'Vegetables',
+          'कई व्यंजनों के लिए आवश्यक स्वाद, ठंडा मौसम पसंद करता है।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/533342/pexels-photo-533342.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Broccoli ',
-      description: 'High in vitamins K and C, grows best in cooler seasons.',
-      category: 'Vegetables',
+      name: 'गोभी ',
+      description: 'विटामिन के और सी से भरपूर, ठंडे मौसम में सबसे अच्छा बढ़ता है।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/47347/broccoli-vegetable-food-healthy-47347.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Peas',
-      description: 'Rich in fiber and protein, prefers cooler weather.',
-      category: 'Vegetables',
+      name: 'मटर',
+      description: 'फाइबर और प्रोटीन से भरपूर, ठंडा मौसम पसंद करता है।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/4750266/pexels-photo-4750266.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Corn',
-      description: 'Requires warm weather and good soil moisture to thrive.',
-      category: 'Vegetables',
+      name: 'भुट्टा',
+      description: 'इसके पनपने के लिए गर्म मौसम और अच्छी मिट्टी की नमी की आवश्यकता होती है।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Carrots',
-      description: 'Crunchy, sweet, and nutritious, requires sandy soil.',
-      category: 'Vegetables',
+      name: 'गाजर',
+      description: 'कुरकुरे, मीठे और पौष्टिक, के लिए रेतीली मिट्टी की आवश्यकता होती है।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/1306559/pexels-photo-1306559.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Pumpkin',
+      name: 'कद्दू',
       description:
-          'Symbol of fall, requires warm soil and lots of space to grow.',
-      category: 'Vegetables',
+          ' कद्दू एक स्थलीय, द्विबीजपत्री पौधा है जिसका तना लम्बा, कमजोर व हरे रंग का होता है। तने पर छोटे-छोटे रोयें होते हैं।',
+      category: 'सब्ज़ियाँ',
       imageUrl:
           'https://images.pexels.com/photos/5574268/pexels-photo-5574268.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Spinach',
+      name: 'पालक',
       description:
-          'A powerhouse of nutrients, spinach is rich in iron, vitamins A, C, and K, magnesium, manganese, and folate.',
-      category: 'Vegetables',
-      imageUrl: 'https://images.pexels.com/photos/7456526/pexels-photo-7456526.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'पालक (वानस्पतिक नाम : Spinacia oleracea) अमरन्थेसी कुल का फूलने वाला पादप है, जिसकी पत्तियाँ एवं तने साग के रूप में खाये जाते हैं।',
+      category: 'सब्ज़ियाँ',
+      imageUrl:
+          'https://images.pexels.com/photos/7456526/pexels-photo-7456526.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Strawberry',
+      name: 'स्ट्रॉबेरी',
       description:
-          'Sweet and juicy fruit, requires full sun and well-drained soil.',
-      category: 'Fruits',
-      imageUrl: 'https://images.pexels.com/photos/46174/strawberries-berries-fruit-freshness-46174.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'मीठे और रसीले फल के लिए पूर्ण सूर्य और अच्छी जल निकासी वाली मिट्टी की आवश्यकता होती है।',
+      category: 'फल',
+      imageUrl:
+          'https://images.pexels.com/photos/46174/strawberries-berries-fruit-freshness-46174.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Cucumber',
-      description: 'Crisp and refreshing, thrives in warm and humid climates.',
-      category: 'Vegetables',
-      imageUrl: 'https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg?auto=compress&cs=tinysrgb&w=600',
+      name: 'खीरा',
+      description: 'कुरकुरा और ताज़ा, गर्म और आर्द्र जलवायु में पनपता है।',
+      category: 'सब्ज़ियाँ',
+      imageUrl:
+          'https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Garlic',
+      name: 'लहसुन',
       description:
-          'Powerful flavor enhancer, requires cool temperatures and well-drained soil.',
-      category: 'Vegetables',
-      imageUrl: 'https://images.pexels.com/photos/1460862/pexels-photo-1460862.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'शक्तिशाली स्वाद बढ़ाने वाले, ठंडे तापमान और अच्छी जल निकासी वाली मिट्टी की आवश्यकता होती है।',
+      category: 'सब्ज़ियाँ',
+      imageUrl:
+          'https://images.pexels.com/photos/1460862/pexels-photo-1460862.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Cabbage',
-      description: 'It is a good source of vitamins C and K, as well as dietary fiber.',
-      category: 'Vegetables',
-      imageUrl: 'https://images.pexels.com/photos/134877/pexels-photo-134877.jpeg?auto=compress&cs=tinysrgb&w=600',
-    ),
-    Crop(
-      name: 'Apple',
+      name: 'पत्ता गोभी',
       description:
-          'Crunchy and sweet, requires cold winters and moderate summers.',
-      category: 'Fruits',
-      imageUrl: 'https://images.pexels.com/photos/672101/pexels-photo-672101.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'यह विटामिन सी और के, साथ ही आहार फाइबर का एक अच्छा स्रोत है।',
+      category: 'सब्ज़ियाँ',
+      imageUrl:
+          'https://images.pexels.com/photos/134877/pexels-photo-134877.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Cherry',
+      name: 'सेब',
       description:
-          'Sweet or tart, requires cold winters and well-drained soil.',
-      category: 'Fruits',
-      imageUrl: 'https://images.pexels.com/photos/966416/pexels-photo-966416.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'कुरकुरा और मीठा, इसके लिए ठंडी सर्दियाँ और मध्यम गर्मी की आवश्यकता होती है।',
+      category: 'फल',
+      imageUrl:
+          'https://images.pexels.com/photos/672101/pexels-photo-672101.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Blueberry',
+      name: 'चेरी',
       description:
-          'Nutritious and flavorful, requires acidic soil and full sun.',
-      category: 'Fruits',
-      imageUrl: 'https://images.pexels.com/photos/4022088/pexels-photo-4022088.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'मीठा हो या तीखा, इसके लिए ठंडी सर्दियाँ और अच्छी जल निकासी वाली मिट्टी की आवश्यकता होती है।',
+      category: 'फल',
+      imageUrl:
+          'https://images.pexels.com/photos/966416/pexels-photo-966416.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Almond',
+      name: 'ब्लूबेरी',
       description:
-          'Nutritious and versatile, requires hot summers and well-drained soil.',
+          'पौष्टिक और स्वादिष्ट, अम्लीय मिट्टी और पूर्ण सूर्य की आवश्यकता होती है।',
+      category: 'फल',
+      imageUrl:
+          'https://images.pexels.com/photos/4022088/pexels-photo-4022088.jpeg?auto=compress&cs=tinysrgb&w=600',
+    ),
+    Crop(
+      name: 'बादाम',
+      description:
+          'पौष्टिक और बहुमुखी, गर्म ग्रीष्मकाल और अच्छी जल निकासी वाली मिट्टी की आवश्यकता होती है।',
       category: 'Nuts',
-      imageUrl: 'https://images.pexels.com/photos/1013420/pexels-photo-1013420.jpeg?auto=compress&cs=tinysrgb&w=600',
+      imageUrl:
+          'https://images.pexels.com/photos/1013420/pexels-photo-1013420.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
     Crop(
-      name: 'Grape',
+      name: 'अंगूर',
       description:
-          'For fresh eating or winemaking, requires full sun and well-drained soil.',
-      category: 'Fruits',
-      imageUrl: 'https://images.pexels.com/photos/4828955/pexels-photo-4828955.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'ताजा खाने या वाइन बनाने के लिए पूर्ण सूर्य और अच्छी जल निकासी वाली मिट्टी की आवश्यकता होती है।',
+      category: 'फल',
+      imageUrl:
+          'https://images.pexels.com/photos/4828955/pexels-photo-4828955.jpeg?auto=compress&cs=tinysrgb&w=600',
     ),
   ];
 
@@ -153,7 +164,7 @@ class SeedsScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Seeds and Crops',
+          'बीज और फसलें',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.amber[200],
@@ -166,8 +177,8 @@ class SeedsScreen extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => ItemDetailScreen(
-                    crop: cropsData[
-                        i]), // Pass the crop data to the ItemDetailScreen
+                  crop: cropsData[i],
+                ), // Pass the crop data to the ItemDetailScreen
               ),
             );
           },
@@ -271,8 +282,14 @@ class ItemDetailScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Image.network(crop.imageUrl),
-            Text('category :- ${crop.category}',style: TextStyle(fontSize: 22),),
-            Text(crop.description,style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),),
+            Text(
+              'वर्ग :- ${crop.category}',
+              style: TextStyle(fontSize: 22),
+            ),
+            Text(
+              crop.description,
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+            ),
           ],
         ),
       ),

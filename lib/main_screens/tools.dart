@@ -175,7 +175,7 @@ class ToolDetailPage extends StatelessWidget {
                 // tool.videoUrl;
                 _openUrl(tool.videoUrl);
               },
-              child: const Text("Watch Demo Video"),
+              child: const Text("डेमो वीडियो देखें"),
             ),
           ],
         ),

@@ -8,7 +8,7 @@ class SoilTestingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Soil Testing'),
+        title: const Text('मिट्टी परीक्षण'),
         backgroundColor: Colors.green[300],
       ),
       body: Center(
@@ -22,7 +22,7 @@ class SoilTestingScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'It is the farmland analysis for multiple parameters like chemical content, toxicity, pH level, salinity, earth-dwelling biota, etc. Such tests also provide information on chemical contamination, humic or organic content, electric conductivity, cation exchange capacity, and other physical and chemical properties.',
+                'यह रासायनिक सामग्री, विषाक्तता, पीएच स्तर, लवणता, पृथ्वी पर रहने वाले बायोटा आदि जैसे कई मापदंडों के लिए कृषि भूमि का विश्लेषण है। ऐसे परीक्षण रासायनिक संदूषण, ह्यूमिक या कार्बनिक सामग्री, विद्युत चालकता, धनायन विनिमय क्षमता और अन्य भौतिक पर भी जानकारी प्रदान करते हैं। और रासायनिक गुण.',
                 style: TextStyle(
                     fontFamily: AutofillHints.addressCity,
                     fontSize: 20,
@@ -36,7 +36,7 @@ class SoilTestingScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => SoilTestingGuide()),
                 );
               },
-              child: const Text('Soil Testing Guide'),
+              child: const Text('मिट्टी परीक्षण'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -47,7 +47,7 @@ class SoilTestingScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Results Interpretation'),
+              child: const Text('परिणाम व्याख्या'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -58,7 +58,7 @@ class SoilTestingScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Soil Management Tips'),
+              child: const Text('मिट्टी प्रबंधन युक्तियाँ'),
             ),
           ],
         ),
@@ -71,28 +71,28 @@ class SoilTestingScreen extends StatelessWidget {
 class SoilTestingGuide extends StatelessWidget {
   final Map<String, List<String>> testInstructions = {
     'pH Test': [
-      'Step 1: Collect your soil sample from 4-6 inches below the surface.',
-      'Step 2: Mix soil with distilled water and let it settle.',
+      'चरण 1: सतह से 4-6 इंच नीचे से अपनी मिट्टी का नमूना एकत्र करें।',
+      'चरण 2: मिट्टी को आसुत जल के साथ मिलाएं और इसे जमने दें।',
     ],
     'Moisture Test': [
-      'Step 1: Collect a handful of soil and squeeze it.',
-      'Step 2: If the soil forms a ball and sticks together, it has high moisture content.',
+      'चरण 1: एक मुट्ठी मिट्टी इकट्ठा करें और उसे निचोड़ें।',
+      'चरण 2: यदि मिट्टी एक गेंद बनकर एक साथ चिपक जाती है, तो इसमें नमी की मात्रा अधिक है।',
     ],
     'Nitrogen Test': [
-      'Step 1: Collect a soil sample and place it in a container.',
-      'Step 2: Add a few drops of nitrate reagent to the soil sample.',
+      'चरण 1: मिट्टी का नमूना इकट्ठा करें और इसे एक कंटेनर में रखें।',
+      'चरण 2: मिट्टी के नमूने में नाइट्रेट अभिकर्मक की कुछ बूँदें जोड़ें।',
     ],
     'Phosphorus Test': [
-      'Step 1: Collect a soil sample and mix it with a phosphorus reagent.',
-      'Step 2: Observe the color change in the soil mixture.',
+      'चरण 1: मिट्टी का नमूना इकट्ठा करें और इसे फॉस्फोरस अभिकर्मक के साथ मिलाएं।',
+      'चरण 2: मिट्टी के मिश्रण में रंग परिवर्तन का निरीक्षण करें।',
     ],
     'Potassium Test': [
-      'Step 1: Collect a soil sample and add it to a test tube.',
-      'Step 2: Add a few drops of potassium reagent to the soil sample.',
+      'चरण 1: मिट्टी का नमूना इकट्ठा करें और इसे एक परखनली में डालें।',
+      'चरण 2: मिट्टी के नमूने में पोटेशियम अभिकर्मक की कुछ बूँदें जोड़ें।',
     ],
     'Organic Matter Test': [
-      'Step 1: Weigh a soil sample and dry it in an oven.',
-      'Step 2: Calculate the weight difference after drying to determine the organic matter content.',
+      'चरण 1: मिट्टी के नमूने को तौलें और उसे ओवन में सुखाएं।',
+      'चरण 2: कार्बनिक पदार्थ की मात्रा निर्धारित करने के लिए सुखाने के बाद वजन के अंतर की गणना करें।',
     ],
   };
 
@@ -111,7 +111,7 @@ class SoilTestingGuide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Soil Testing Guideline'),
+        title: const Text('मिट्टी परीक्षण दिशानिर्देश'),
       ),
       body: GridView.count(
         crossAxisCount: 2,
@@ -179,7 +179,7 @@ class TestInstructionsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Instructions:',
+              'निर्देश:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -218,44 +218,43 @@ class ResultsInterpretation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Results Interpretation'),
+        title: const Text('परिणाम व्याख्या'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: const <Widget>[
             Text(
-              'Understanding Your Soil Test Results',
+              'अपने मृदा परीक्षण परिणामों को समझना',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             Text(
-              'PH Level:',
+              'PH स्तर:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              'A pH below 6.0 is too acidic for most crops and may need lime. A pH above 7.5 is too alkaline and may require sulfur.',
+              '6.0 से नीचे का पीएच अधिकांश फसलों के लिए बहुत अम्लीय होता है और इसमें चूने की आवश्यकता हो सकती है। 7.5 से ऊपर का पीएच अत्यधिक क्षारीय होता है और इसमें सल्फर की आवश्यकता हो सकती है।',
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 10),
             Text(
-              'Moisture:',
+              'नमी:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Low moisture levels require improved water retention strategies, such as mulching or the use of water-absorbent polymers.',
+              'कम नमी के स्तर के लिए बेहतर जल प्रतिधारण रणनीतियों की आवश्यकता होती है, जैसे मल्चिंग या जल-अवशोषित पॉलिमर का उपयोग।',
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 10),
             Text(
-              'Nutrients:',
+              'पोषक तत्व:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Low nitrogen levels could be improved with green manures or organic fertilizers. Phosphorus and potassium levels guide the application of specific nutrients.',
+              'कम नाइट्रोजन स्तर को हरी खाद या जैविक उर्वरकों से सुधारा जा सकता है। फास्फोरस और पोटेशियम का स्तर विशिष्ट पोषक तत्वों के अनुप्रयोग को निर्देशित करता है।',
               style: TextStyle(fontSize: 16),
             ),
-            // Add more sections as needed for other test results
           ],
         ),
       ),
@@ -271,50 +270,50 @@ class SoilManagementTips extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Soil Management Tips'),
+        title: const Text('मृदा प्रबंधन युक्तियाँ'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: const <Widget>[
             Text(
-              'Soil Management Tips',
+              'मृदा प्रबंधन युक्तियाँ',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             Text(
-              '1. pH Adjustment:',
+              '1. pH समायोजन:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              'If your soil pH is too acidic or alkaline, consider applying lime or sulfur to adjust the pH to the optimal range for your crops.',
+              'यदि आपकी मिट्टी का पीएच बहुत अधिक अम्लीय या क्षारीय है, तो पीएच को अपनी फसलों के लिए इष्टतम सीमा पर समायोजित करने के लिए चूना या सल्फर लगाने पर विचार करें।',
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 10),
             Text(
-              '2. Organic Matter:',
+              '2. कार्बनिक पदार्थ:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Incorporate organic matter such as compost, manure, or cover crops to improve soil structure, water retention, and nutrient availability.',
+              'मिट्टी की संरचना, जल धारण और पोषक तत्वों की उपलब्धता में सुधार के लिए खाद, गोबर या कवर फसलों जैसे कार्बनिक पदार्थों को शामिल करें।',
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 10),
             Text(
-              '3. Nutrient Management:',
+              '3. पोषक तत्व प्रबंधन:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Based on your soil test results, apply fertilizers or soil amendments to correct nutrient deficiencies and maintain optimal nutrient levels for crop growth.',
+              'अपने मिट्टी परीक्षण के परिणामों के आधार पर, पोषक तत्वों की कमी को दूर करने और फसल के विकास के लिए इष्टतम पोषक तत्वों के स्तर को बनाए रखने के लिए उर्वरक या मिट्टी में संशोधन लागू करें।',
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 10),
             Text(
-              '4. Crop Rotation:',
+              '4. फसल चक्र:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Implement crop rotation practices to prevent soil depletion and nutrient imbalances, reduce pest and disease pressure, and improve overall soil health.',
+              'मिट्टी की कमी और पोषक तत्वों के असंतुलन को रोकने, कीट और बीमारी के दबाव को कम करने और समग्र मिट्टी के स्वास्थ्य में सुधार के लिए फसल चक्र प्रथाओं को लागू करें।',
               style: TextStyle(fontSize: 16),
             ),
             // Add more tips as needed

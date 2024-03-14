@@ -58,7 +58,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Animal Husbandry',
+          'पशुपालन',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.green[300],
@@ -134,7 +134,7 @@ class AnimalDetailPage extends StatelessWidget {
                 // animal.videoUrl;
                 _openUrl(animal.videoUrl);
               },
-              child: const Text("Watch Demo Video"),
+              child: const Text("डेमो वीडियो देखें"),
             ),
           ],
         ),
