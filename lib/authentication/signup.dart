@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'signup.dart';
+import 'login.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // toolbarHeight: 90,
         centerTitle: true,
         title: const Text(
-          'WELCOME !',
+          'CREATE ACCOUNT',
           style: TextStyle(fontSize: 28),
         ),
       ),
@@ -25,16 +25,10 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Center(
           child: Column(
             children: [
-              const Text('Please Login To Continue'),
+              const Text('Please SignUp To Continue'),
+              
               const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'LOGIN',
-                style: TextStyle(fontSize: 23),
-              ),
-              const SizedBox(
-                height: 40,
+                height: 10,
               ),
               const Padding(
                 padding: EdgeInsets.all(16),
@@ -46,7 +40,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       Icons.person_outline,
                       // color: Colors.orange,
                     ),
-                    labelText: 'Username',
+                    labelText: 'Full Name',
+                  ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: TextField(
+                  // controller: _usernameController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    icon: Icon(
+                      Icons.person_outline,
+                      // color: Colors.orange,
+                    ),
+                    labelText: 'Email Address',
                   ),
                 ),
               ),
@@ -61,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Icons.lock,
                       // color: Colors.grey,
                     ),
-                    labelText: 'Password',
+                    labelText: 'Create Password',
                   ),
                 ),
               ),
@@ -75,37 +83,26 @@ class _LoginScreenState extends State<LoginScreen> {
                     )),
                 onPressed: () {},
                 child: const Text(
-                  'LOGIN',
+                  'SIGNUP',
                   // style: TextStyle(color: Colors.white),
                 ),
               ),
               const SizedBox(height: 30),
-              const Padding(
-                padding: EdgeInsets.only(left: 70),
+              Padding(
+                padding: const EdgeInsets.only(left: 70),
                 child: Row(
                   children: [
-                    Text('Forgot Your Password?'),
-                    Text(
-                      ' Reset Here',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    )
-                  ],
-                ),
-              ),
-              // const SizedBox(height: 5),
-               Padding(
-                padding: const EdgeInsets.only(left: 75),
-                child: Row(
-                  children: [
-                    const Text("Don't Have An Account?"),
+                    const Text('Already Have An Account!'),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(context, 
-                         MaterialPageRoute(builder: (context) => SignUpScreen()),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()),
                         );
                       },
                       child: const Text(
-                        ' Register',
+                        ' Login Here',
                         style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                     )
@@ -118,8 +115,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 400,
                 fit: BoxFit.cover,
               ),
-            ],
-          ),
+            ], //
+          ), //
         ),
       ),
     );
