@@ -96,6 +96,7 @@ flutter:
     - images/animals/bee.jpg
     - images/animals/fish.jpeg
     - images/login_bg.jpg
+    - images/bg.jpg
     - images/weather/cloudy.png
     - images/weather/rainy-day.png
     - images/weather/sun.png

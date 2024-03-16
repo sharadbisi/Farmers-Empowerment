@@ -10,6 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,107 +23,114 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(fontSize: 28),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              const Text('Please Login To Continue'),
-              const SizedBox(
-                height: 20,
+      body: Stack(children: [
+        Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/bg.jpg'),
+                fit: BoxFit.cover, // Cover the entire screen
               ),
-              const Text(
-                'LOGIN',
-                style: TextStyle(fontSize: 23),
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: TextField(
-                  // controller: _usernameController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    icon: Icon(
-                      Icons.person_outline,
-                      // color: Colors.orange,
+            ),
+        ),
+        SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                const Text('जारी रखने के लिए कृपया लॉगिन करें'),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'लॉगिन',
+                  style: TextStyle(fontSize: 23),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: TextField(
+                    controller: _usernameController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      icon: Icon(
+                        Icons.person_outline,
+                      ),
+                      labelText: 'उपयोगकर्ता नाम', //username
                     ),
-                    labelText: 'Username',
                   ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: TextField(
-                  // controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    icon: Icon(
-                      Icons.lock,
-                      // color: Colors.grey,
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: TextField(
+                    controller: _passwordController,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      icon: Icon(
+                        Icons.lock,
+                      ),
+                      labelText: 'पासवर्ड',
                     ),
-                    labelText: 'Password',
                   ),
                 ),
-              ),
-              ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.yellow),
-                    shape: MaterialStatePropertyAll(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0),
-                      ),
-                    )),
-                onPressed: () {},
-                child: const Text(
-                  'LOGIN',
-                  // style: TextStyle(color: Colors.white),
+                ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.yellow),
+                      shape: MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0.0),
+                        ),
+                      )),
+                  onPressed: () {},
+                  child: const Text(
+                    'लॉगिन',
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30),
-              const Padding(
-                padding: EdgeInsets.only(left: 70),
-                child: Row(
-                  children: [
-                    Text('Forgot Your Password?'),
-                    Text(
-                      ' Reset Here',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    )
-                  ],
+                const SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(left: 70),
+                  child: Row(
+                    children: [
+                      const Text('Forgot Your Password?'),
+                      GestureDetector(
+                        onTap: () =>
+                            print('Clicked on password reset function'),
+                        child: const Text(
+                          ' Reset Here',
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              // const SizedBox(height: 5),
-               Padding(
-                padding: const EdgeInsets.only(left: 75),
-                child: Row(
-                  children: [
-                    const Text("Don't Have An Account?"),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context, 
-                         MaterialPageRoute(builder: (context) => SignUpScreen()),
-                        );
-                      },
-                      child: const Text(
-                        ' Register',
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                    )
-                  ],
+                const SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.only(left: 75),
+                  child: Row(
+                    children: [
+                      const Text("Don't Have An Account?"),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpScreen()),
+                          );
+                        },
+                        child: const Text(
+                          ' Register',
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Image.asset(
-                'images/login_bg.jpg',
-                height: 205,
-                width: 400,
-                fit: BoxFit.cover,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
+      ]),
     );
   }
 }
