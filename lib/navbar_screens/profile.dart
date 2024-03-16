@@ -8,7 +8,8 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('प्रोफ़ाइल'),
-        backgroundColor: Colors.green[100],
+        backgroundColor: const Color.fromARGB(255, 213, 236, 255),
+        elevation: 0,
       ),
       body: Stack(children: [
         Container(
@@ -26,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
               child: CircleAvatar(
                 radius: 80,
                 backgroundImage: NetworkImage(
-                  'https://cdn-icons-png.flaticon.com/128/179/179821.png',
+                  'https://t3.ftcdn.net/jpg/04/43/94/64/240_F_443946404_7GUoIGZeyx7R7ymCicI3k0xPnrMoKDek.jpg',
                 ),
               ),
             ),

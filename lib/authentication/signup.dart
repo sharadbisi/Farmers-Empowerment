@@ -23,6 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           'CREATE ACCOUNT',
           style: TextStyle(fontSize: 28),
         ),
+        backgroundColor: const Color.fromARGB(255, 213, 236, 255),
       ),
       body: Stack(
         children: [

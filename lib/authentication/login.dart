@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
           'WELCOME !',
           style: TextStyle(fontSize: 28),
         ),
+        backgroundColor: const Color.fromARGB(255, 213, 236, 255),
       ),
       body: Stack(children: [
         Container(
@@ -41,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 20,
                 ),
                 const Text(
-                  'लॉगिन',
+                  'लॉगिन करें',
                   style: TextStyle(fontSize: 23),
                 ),
                 const SizedBox(
