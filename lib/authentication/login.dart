@@ -93,12 +93,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.only(left: 70),
                   child: Row(
                     children: [
-                      const Text('Forgot Your Password?'),
+                      // const Text('Forgot Your Password?'),
+                      const Text('पासवर्ड भूल गए?'),//बदलें
                       GestureDetector(
                         onTap: () =>
                             print('Clicked on password reset function'),
                         child: const Text(
-                          ' Reset Here',
+                          ' रिसेट करें',
                           style: TextStyle(fontWeight: FontWeight.w500),
                         ),
                       )
@@ -110,7 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.only(left: 75),
                   child: Row(
                     children: [
-                      const Text("Don't Have An Account?"),
+                      // const Text("Don't Have An Account?"),
+                      const Text('नया अकाउंट बनायें'),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -120,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                         child: const Text(
-                          ' Register',
+                          ' रजिस्टर करें',
                           style: TextStyle(fontWeight: FontWeight.w500),
                         ),
                       )
