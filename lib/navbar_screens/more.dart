@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//NEWS SCREEN
 class News {
   final String title;
   final String imageUrl;
